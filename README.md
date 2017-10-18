@@ -18,6 +18,14 @@ npm install --save print-arch
 
 ## Use
 
+Quick and easy - just prints platform and architecture when called
+
+```
+$(npm bin)/print-arch
+platform: darwin
+arch: x64
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017

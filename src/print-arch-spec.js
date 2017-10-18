@@ -4,7 +4,13 @@
 const printArch = require('.')
 
 describe('print-arch', () => {
-  it('write this test', () => {
-    console.assert(printArch, 'should export something')
+  it('has platform', () => {
+    const message = printArch()
+    console.assert(message.includes('platform:'))
+  })
+
+  it('has arch', () => {
+    const message = printArch()
+    console.assert(message.includes('arch:'))
   })
 })

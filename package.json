@@ -4,6 +4,9 @@
   "version": "0.0.0-development",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": "https://github.com/bahmutov/print-arch/issues",
+  "bin": {
+    "print-arch": "bin/print-arch.js"
+  },
   "config": {
     "pre-git": {
       "commit-msg": "simple",
@@ -11,6 +14,7 @@
         "npm prune",
         "npm run deps",
         "npm test",
+        "npm run demo",
         "git add src/*.js",
         "npm run ban"
       ],
@@ -28,6 +32,7 @@
     "node": ">=6"
   },
   "files": [
+    "bin",
     "src/*.js",
     "!src/*-spec.js"
   ],
@@ -60,7 +65,8 @@
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
     "unit": "mocha src/*-spec.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "demo": "node bin/print-arch.js"
   },
   "release": {
     "analyzeCommits": "simple-commit-message",
